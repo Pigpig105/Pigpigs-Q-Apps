@@ -163,7 +163,7 @@ const accountData = await qortalRequest({
 
       const urlSign = 'http://localhost:12391/transactions/sign';
       const requestBodySigning = {
-        privateKey: '', // Fixme
+        privateKey: Base58.encode(reduxStore.getState().app.selectedAddress.seed),
         transactionBytes: rawUnsignedYes
       };
 
@@ -235,7 +235,7 @@ const accountData = await qortalRequest({
 
       const urlSign = 'http://localhost:12391/transactions/sign';
       const requestBodySigning = {
-        privateKey: '', // Fixme
+        privateKey: Base58.encode(reduxStore.getState().app.selectedAddress.seed),
         transactionBytes: rawUnsignedNo
       };
 
